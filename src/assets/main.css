@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .btn-sm {
+    min-height: 2.5rem;
+    height: 2.5rem;
+  }
+}

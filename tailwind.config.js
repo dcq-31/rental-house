@@ -8,18 +8,20 @@ module.exports = {
   daisyui: {
     themes: [
       {
-        mytheme: {
-          primary: "#26a4b4",
-          secondary: "#e2c836",
-          accent: "#a5f3fc",
+        light: {
+          primary: "#00c5cf",
+          "primary-focus": "#00afb9",
+          secondary: "#fdfcdc",
+          accent: "#f07167",
           neutral: "#4b5563",
           "base-100": "#ffffff",
-          info: "#3abff8",
-          success: "#36d399",
-          warning: "#fbbd23",
-          error: "#f87272",
+          info: "#7dd3fc",
+          success: "#86efac",
+          warning: "#fcd34d",
+          error: "#fca5a5",
         },
       },
+      "dark",
     ],
   },
 };
