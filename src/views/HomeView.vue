@@ -1,45 +1,50 @@
 <script lang="ts" setup>
-import type { Component } from "vue";
 import { ref, computed, onMounted, onBeforeUnmount } from "vue";
-import {
-  RocketLaunchIcon,
-  MoonIcon,
-  StarIcon,
-  ShoppingCartIcon,
-  ArrowUpIcon,
-} from "@heroicons/vue/24/solid";
+import { ArrowUpIcon } from "@heroicons/vue/24/solid";
+import type { IImage } from "../types";
 import FeatureWidget from "../components/FeatureWidget.vue";
 
 interface IFeature {
   title: string;
   description: string;
-  icon: Component;
+  image: IImage;
 }
 
 const FEATURES: IFeature[] = [
   {
     title: "Piscina",
-    description:
-      "otam nulla. Cumque aspernatur inventore ipsa quae fugit nobis dicta qui!.Cumque aspernatur inventore",
-    icon: RocketLaunchIcon,
+    description: "Diponible a toda hora para su disfrute.",
+    image: {
+      path: "/icons/pool-water.png",
+      alt: "Alternative text",
+    },
   },
   {
     title: "Garaje",
     description:
-      "Cumque aspernatur inventore.otam nulla. Cumque aspernatur fugit nobis dicta qui!",
-    icon: StarIcon,
+      "¿No sabes dónde estacionar tu auto? Nosotros nos encargamos de eso.",
+    image: {
+      path: "/icons/garage.png",
+      alt: "Alternative text",
+    },
   },
   {
     title: "Aire Frío",
     description:
-      "otam nulla. Cumque aspernatur saepe maiores, mque aspernatur inventore ipsa quae fugit nobis dicta qui!",
-    icon: MoonIcon,
+      "¿Le gusta el frío? Todos nuestros cuartos cuentan con su propio aire acondicionado.",
+    image: {
+      path: "/icons/air-conditioning.png",
+      alt: "Alternative text",
+    },
   },
   {
     title: "Desayuno",
     description:
-      "otam nulla. Ventore, aspernatur inventore ipsa quae fugit nobis dicta qui!s",
-    icon: ShoppingCartIcon,
+      "No te preocupes por tu desayuno contamos con ofertas variadas y te lo llevamos a tu cuarto si lo deseas.",
+    image: {
+      path: "/icons/breakfast.png",
+      alt: "Alternative text",
+    },
   },
 ];
 
@@ -71,25 +76,32 @@ const scrollTop = () => {
       style="background-image: url(images/hero.jpg)"
       :style="{ backgroundPosition: bgPosition }"
     >
-      <div class="hero-overlay bg-black bg-opacity-30"></div>
+      <div class="hero-overlay bg-black bg-opacity-40"></div>
       <div class="hero-content text-center text-white">
         <div class="max-w-md">
-          <h1 class="mb-3 text-5xl font-bold leading-tight">Hostal Alita</h1>
+          <h1 class="mb-3 text-5xl font-semibold leading-tight">
+            Bienvenido al Hostal Alita
+          </h1>
           <p class="mb-6 text-xl text-gray-100">
-            Visita nuestra hermosa casa y disfruta de unas vacaciones en
-            familia.
+            Disfruta de unas vacaciones en familia en nuestro hogar.
           </p>
-          <div
-            class="btn-primary btn-sm btn rounded-full px-6 tracking-widest text-white"
-          >
-            Reserva
+
+          <div>
+            <div
+              class="btn-primary btn mx-auto rounded-full px-6 text-base font-medium normal-case tracking-wider text-white"
+            >
+              Visitar
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <section class="py-16 px-2">
-      <h3 class="mb-5 text-center text-4xl font-medium">Disfruta de:</h3>
+      <div class="mb-5">
+        <h3 class="mb-2 text-center text-3xl font-bold">Nuestro hostal</h3>
+        <hr class="mx-auto w-20 border-t-2 border-primary" />
+      </div>
 
       <div class="space-y-4">
         <FeatureWidget
@@ -105,7 +117,7 @@ const scrollTop = () => {
       :class="[scrollY > 400 ? 'scale-100' : 'scale-0']"
       @click="scrollTop"
     >
-      <ArrowUpIcon class="h-6 w-6 text-white" />
+      <ArrowUpIcon class="h-5 w-5 text-white" />
     </div>
   </main>
 </template>
