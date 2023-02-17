@@ -1,23 +1,24 @@
 <script lang="ts" setup>
-import type { Component } from "vue";
+import type { IImage } from "../types";
+
 interface IFeatureWidgetProps {
   title: string;
   description: string;
-  icon: Component;
+  image: IImage;
 }
 const props = defineProps<IFeatureWidgetProps>();
 </script>
 <template>
-  <div class="group flex items-start space-x-4 p-2">
-    <div
-      class="grow rounded-lg bg-slate-100 p-5 ring-2 ring-transparent group-hover:ring group-hover:ring-primary group-hover:ring-opacity-60"
-    >
-      <Component :is="icon" class="h-10 w-10 text-primary" />
+  <div class="p-2">
+    <div class="mb-2">
+      <div class="mx-auto mb-1 w-fit rounded-lg bg-gray-50 p-3">
+        <img :src="image.path" :alt="image.alt" class="w-14" />
+      </div>
+      <div class="text-center text-lg text-gray-800">{{ title }}</div>
     </div>
 
     <div>
-      <div class="text-xl text-slate-700">{{ title }}</div>
-      <div class="text-base text-slate-500">{{ description }}</div>
+      <div class="text-center text-gray-400">{{ description }}</div>
     </div>
   </div>
 </template>
