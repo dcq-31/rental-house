@@ -9,8 +9,8 @@ module.exports = {
     themes: [
       {
         light: {
-          primary: "#00c5cf",
-          "primary-focus": "#00afb9",
+          primary: "#0099ff",
+          "primary-focus": "#008ae6",
           secondary: "#fdfcdc",
           accent: "#f07167",
           neutral: "#4b5563",
